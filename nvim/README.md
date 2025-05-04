@@ -1,6 +1,6 @@
 # bpavuk's Neovim config
 
-Each language needs its own LSPs, and LSPs have their own dependencies. Here is
+Each language needs its own LSP, and LSPs have their own dependencies. Here is
 the list of everything you may ever need:
 
 ## Assembly
