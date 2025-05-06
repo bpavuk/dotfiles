@@ -11,6 +11,13 @@ return {
     config = function()
       require "configs.lspconfig"
     end,
+    init_options = {
+      userLanguages = {
+        eelixir = "html-eex",
+        eruby = "erb",
+        rust = "html"
+      }
+    }
   },
 
   {
