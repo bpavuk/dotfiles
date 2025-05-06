@@ -1,42 +1,35 @@
-local configs = require "nvchad.configs.lspconfig"
+require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
-  html = {
-    filetypes = { "html", "htmldjango", "superhtml" }
-  },
-  cssls = {},
-  somesass_ls = {
-    root_dir = function(...)
-      return require("lspconfig.util").root_pattern ".git"(...)
-    end,
-    init_options = {
-      workspace = root_dir,
-    },
-  },
-  bashls = {},
-  clangd = {},
+  "html",
+  "cssls",
+  "somesass_ls",
+  "bashls",
+  "clangd",
+  "slint_lsp",
+  "pyright",
+}
+vim.lsp.enable(servers)
 
-  slint_lsp = {},
+vim.lsp.config('html', {
+  filetypes = { "html", "htmldjango", "superhtml" }
+})
+vim.lsp.config('somesass_ls', {
+  root_dir = function(...)
+    return require("lspconfig.util").root_pattern ".git"(...)
+  end,
+  init_options = {
+    workspace = root_dir,
+  },
+})
 
-  pyright = {
-    settings = {
-      python = {
-        analysis = {
-          autoSearchPaths = true,
-          typeCheckingMode = "basic",
-        },
+vim.lsp.config('pyright', {
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        typeCheckingMode = "basic",
       },
     },
   },
-
-  asm_lsp = {},
-  rnix = {},
-}
-
-for name, opts in pairs(servers) do
-  opts.on_init = configs.on_init
-  opts.on_attach = configs.on_attach
-  opts.capabilities = configs.capabilities
-
-  require("lspconfig")[name].setup(opts)
-end
+})
