@@ -49,6 +49,7 @@ return {
         "cpp",
         "python",
         "slint",
+        "yuck",
       },
     },
   },

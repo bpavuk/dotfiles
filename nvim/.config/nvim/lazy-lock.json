@@ -36,5 +36,6 @@
   "vim-slint": { "branch": "main", "commit": "9badce3860297562bb5e80ba1666628f9e0ac632" },
   "volt": { "branch": "main", "commit": "c45d5f48da8e802e608b5c6da471ca4d84276dfb" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "yuck.vim": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" },
   "zola.nvim": { "branch": "main", "commit": "0319c188e443ecae90819cf013d46ff9bf387def" }
 }
