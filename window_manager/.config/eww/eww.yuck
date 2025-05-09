@@ -1,0 +1,72 @@
+(defwindow powermenu
+  :monitor 0
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  :geometry (geometry
+              :width "15%"
+              :height "30%"
+              :anchor "top right")
+  (powermenu_layout))
+
+(defwidget powermenu_layout []
+  (box :orientation "v" :class "powermenu_layout"
+    :vexpand true
+    (box :orientation "h" :class "powermenu_row_1"
+      :vexpand true
+      (poweroff)
+      (reboot)
+    )
+
+    (box :orientation "h" :class "powermenu_row_2"
+      (suspend)
+      (logout)
+    )
+  )
+)
+
+
+(defwidget poweroff []
+  (box :orientation "v" :space-evenly false
+    (button :onclick "notify-send Power-Off!"
+      :vexpand true
+      :class "poweroff powerbutton"
+      :onclick "systemctl poweroff"
+      (label :text ""))
+    (label :text "отключить" :valign "start")
+  )
+)
+
+(defwidget reboot []
+  (box :orientation "v" :space-evenly false
+    (button :onclick "notify-send Reboot!"
+      :vexpand true
+      :class "reboot powerbutton"
+      :onclick "systemctl reboot"
+      (label :text "󰑓"))
+    (label :text "перезагруз" :valign "start")
+  )
+)
+
+(defwidget suspend []
+  (box :orientation "v" :space-evenly false
+    (button :onclick "notify-send Suspend!"
+      :vexpand true
+      :class "suspend powerbutton"
+      :onclick "systemctl suspend"
+      (label :text ""))
+    (label :text "сон" :valign "start")
+  )
+)
+
+(defwidget logout []
+  (box :orientation "v" :space-evenly false
+    (button :onclick "notify-send Logout!"
+      :vexpand true
+      :class "logout powerbutton"
+      :onclick "loginctl kill-session $XDG_SESSION_ID"
+      (label :text "󰗽"))
+    (label :text "выйти" :valign "start")
+  )
+)
+

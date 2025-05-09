@@ -1,0 +1,53 @@
+// general styling
+
+* {
+  font-family: JetBrainsMono Nerd Font Mono;
+}
+
+label, button, .powerbutton {
+  padding: 0px;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.powermenu, .powerbutton {
+  background-color: #000000;
+}
+
+button {
+  background-image: none;
+  border-radius: 10px;
+  border-width: 3px;
+  margin: 4pt;
+}
+
+.powerbutton label {
+  font-size: 4em;
+}
+
+// button-specific
+
+$poweroff_color: #03624c;
+$reboot_color: #2cc295;
+$suspend_color: #00df81;
+$logout_color: #f1f7f6;
+
+.poweroff {
+  border-color: $poweroff_color;
+  color: $poweroff_color;
+}
+
+.reboot {
+  border-color: $reboot_color;
+  color: $reboot_color;
+}
+
+.suspend {
+  border-color: $suspend_color;
+  color: $suspend_color;
+}
+
+.logout {
+  border-color: $logout_color;
+  color: $logout_color;
+}

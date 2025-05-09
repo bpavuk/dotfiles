@@ -34,15 +34,6 @@
             "default": ""
         }
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -50,7 +41,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d.%m.%Y}"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -81,17 +72,9 @@
         "on-click": "flatpak run com.saivert.pwvucontrol"
     },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : " ⏻  ",
         "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-          "shutdown": "systemctl poweroff",
-          "reboot": "systemctl reboot",
-          "suspend": "systemctl suspend",
-          "hibernate": "systemctl hibernate",
-          "logout": "exit"
-        }
+        "on-click": "$HOME/.config/waybar/scripts/toggle_eww_window.sh powermenu"
     },
     "custom/notification": {
       "tooltip": false,
