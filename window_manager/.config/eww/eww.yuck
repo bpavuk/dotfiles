@@ -28,7 +28,7 @@
 
 (defwidget poweroff []
   (box :orientation "v" :space-evenly false
-    (button :onclick "notify-send Power-Off!"
+    (button
       :vexpand true
       :class "poweroff powerbutton"
       :onclick "systemctl poweroff"
@@ -39,7 +39,7 @@
 
 (defwidget reboot []
   (box :orientation "v" :space-evenly false
-    (button :onclick "notify-send Reboot!"
+    (button
       :vexpand true
       :class "reboot powerbutton"
       :onclick "systemctl reboot"
@@ -50,10 +50,10 @@
 
 (defwidget suspend []
   (box :orientation "v" :space-evenly false
-    (button :onclick "notify-send Suspend!"
+    (button
       :vexpand true
       :class "suspend powerbutton"
-      :onclick "systemctl suspend"
+      :onclick "hyprlock & systemctl suspend"
       (label :text ""))
     (label :text "сон" :valign "start")
   )
@@ -61,7 +61,7 @@
 
 (defwidget logout []
   (box :orientation "v" :space-evenly false
-    (button :onclick "notify-send Logout!"
+    (button
       :vexpand true
       :class "logout powerbutton"
       :onclick "loginctl kill-session $XDG_SESSION_ID"
