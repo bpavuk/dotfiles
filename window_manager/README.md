@@ -4,7 +4,7 @@
 
 Mandatory:
 - `waybar` - top bar
-- `wofi` - app launcher
+- `fuzzel` - app launcher
 - `waypaper` and `hyprpaper` - for the wallpaper
 - `kitty` - terminal
 - Hyprland - my tiling WM of choice
