@@ -15,7 +15,7 @@ window#waybar {
   /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
   color: #ffffff;
   transition-property: background-color;
-  transition-duration: 0.5s;
+  /* transition-duration: 0.5s; */
 }
 
 window#waybar.hidden {
@@ -74,6 +74,12 @@ button {
   border: #00df81;
   padding: 0 5px;
   border-radius: 10px;
+
+  /* disables animation */
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+  background: none;
 }
 
 #workspaces button.active {
