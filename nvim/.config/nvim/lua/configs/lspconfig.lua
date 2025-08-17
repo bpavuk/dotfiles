@@ -8,6 +8,7 @@ local servers = {
   "clangd",
   "slint_lsp",
   "pyright",
+  "glsl_analyzer",
 }
 vim.lsp.enable(servers)
 

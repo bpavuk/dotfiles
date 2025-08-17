@@ -1,0 +1,6 @@
+return {
+  {
+    "timtro/glslView-nvim"
+  },
+}
+
